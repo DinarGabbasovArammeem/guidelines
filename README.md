@@ -14,8 +14,7 @@ Note: some rules were taken from
 The version number in the module manifest should be the Odoo major
 version (e.g. `13.0`) followed by the module `x.y.z` version numbers.
 For example: `13.0.1.0.0` is expected for the first release of an 13.0
-module.
-
+module. 
 The `x.y.z` version numbers follow the semantics `breaking.feature.fix`:
 
 * `x` increments when the data model or the views had significant
@@ -24,6 +23,9 @@ The `x.y.z` version numbers follow the semantics `breaking.feature.fix`:
   upgrade will probably be needed.
 * `z` increments when bugfixes were made. Usually a server restart
   is needed for the fixes to be made available.
+  
+(**Aram NOTE:** use 13.1.0.0, use only z - migration)
+
 
 ## [Directories](#toc)
 
@@ -37,7 +39,7 @@ A module is organized in a few directories:
 * `static/src/`: contains the web assets, separated into `css/`, `js/`, `img/`, `lib/`, `xml/` (js qweb templates)...
 * `views/`: contains the views and templates (only backend), also assets.xml
 * `wizards/`: wizard model and views
-* `libs/`: for classes are not bound with odoo
+* ~`libs/`: for classes are not bound with odoo~
 
 ## [File naming](#toc)
 

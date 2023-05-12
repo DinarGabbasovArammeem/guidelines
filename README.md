@@ -57,13 +57,16 @@ For model named `<main_model>` the following files may be created:
 * `views/<main_model>_view.xml`
 * `views/<main_model>_template.xml`
 
+(TODO: more details about _template.xml.)
+e.g. where <main_model> - ir_cron.xml, email_template.xml
+
 For `controller`, if there is only one file it should be named `main.py`.
 If there are several controller classes or functions you can split them into
 several files.
 
 JS file names must match module names defined in these files.
 For example, js file start with `odoo.define("web.list_controller"...` then file name
-must be `static/js/list_controller.js`.  
+must be `static/js/list_controller.js`.  e.g.: https://github.com/arammeem/odoo-modules-hd-12/blob/0c82b6a3d6fbd2196946b96b445a89d59fedc921/modules/aram_color_tag/static/src/js/color_tag_widget.js
 
 Names of xml files with QWeb templates should represent the objects that describe.
 Example: `static/xml/some_button.xml`  
@@ -106,7 +109,8 @@ addons/<my_module_name>/
 |   `-- <qweb_report>_report.xml
 |-- security/
 |   |-- ir.model.access.csv
-|   `-- <main_model>_security.xml
+|   `-- res_groups.xml
+|   `-- ir_rule_<main_model>.xml (e.g.: ir_rule_sale_order.xml)
 |-- static/
 |   |-- img/
 |   |   |-- my_little_kitten.png
@@ -125,7 +129,7 @@ addons/<my_module_name>/
 |-- tests/
 |   |-- __init__.py
 |   |-- <test_file>.py
-|   `-- <test_file>.yml
+|   |-- fixtures/...
 |-- views/
 |   |-- <main_model>_view.xml
 |   |-- <inherited_main_model>_view.xml
@@ -137,9 +141,12 @@ addons/<my_module_name>/
     `-- <wizard_model>.xml
 ```
 
+(TODO: fixtures - add description)
 Use correct file permissions: folders 755 and files 644.
 
 ## [Installation hooks](#toc)
+
+TODO: example of hooks
 
 When **`pre_init_hook`**, **`post_init_hook`**, **`uninstall_hook`** and **`post_load`** are
 used, they should be placed in **`hooks.py`** located at the root of module

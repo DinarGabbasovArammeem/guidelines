@@ -265,7 +265,7 @@ When declaring a record in XML:
 * Do not prefix the xmlid by the current module's name
   (`<record id="view_id"...`, not `<record id="current_module.view_id"...`)
 * If there are more than 3 attributes, the `name` attribute should be placed on the first string,
-  the others should be placed on the next strings.
+  the others should be placed on the next strings. (We will use xmllint)
 * Using `"` preferable than `'`
 * If an attribute value consists of several items, then each item must be on a separate line.
   Also, in this case, each attribute must be on a separate line, regardless of their number.
